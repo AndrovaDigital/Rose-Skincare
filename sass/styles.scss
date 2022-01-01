@@ -1,0 +1,592 @@
+@import 'componentes/configuracion', 'componentes/menu', 'componentes/boton', 'animaciones/scroll';
+
+.header_container{
+    height: 12vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 30% 70%;
+    position: fixed;
+    z-index: 5;
+    .top_header{
+        background-color: $skin;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+        h4{
+            opacity:1;  
+            animation: slidein 3s ;
+        }
+        @keyframes slidein {
+            0%   { opacity:0; }
+            50%  { opacity:0.5; }
+            100% { opacity:1; }
+          }
+    }
+}
+
+.ir_arriba {
+	display:none;
+	padding:15px;
+	background: $black;
+	cursor:pointer;
+	position: fixed;
+	bottom:30px;
+	right:30px;
+    z-index: 4;
+    img{
+        width: 20px;
+        height: 20px;
+    }
+}
+
+
+.slider{
+    height: 100vh;
+    padding-top: 7rem;
+    background-image: url(/assets/Skin.jpg);
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    h1{
+        animation: navLinkFade 6s ;
+        @keyframes navLinkFade{
+            from{
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to{
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+    }
+    p{
+        font-family: Casanova;
+        color: $coffe;
+        font-size: 1.6rem;
+        animation: navLinkFade2 4s;
+        @keyframes navLinkFade2{
+            from{
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to{
+                opacity: 1;
+                transform: translateX(0px);
+            }
+        }
+    }
+    .button{
+        cursor: pointer;
+        @include boton_slider;
+    }
+}
+
+.container_info{
+    height: auto;
+    width: 100%;
+    background-color: $skin;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+    
+    .skin{
+        margin: 2rem;
+        text-align: center;
+        line-height: 30px;
+        p{
+            font-size: 1rem;
+        }
+    }
+}
+
+.container_nosotros{
+    height: auto;
+    width: auto;
+    padding-left: 10rem;
+    padding-right: 10rem;
+    padding-bottom: 4rem;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-items: center;
+    background-color: $skin;
+    .info_nosotros{
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 5rem;
+    }
+    .img_nosotros{
+        width: 50%;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.container_skincare{
+    height: auto;
+    width: auto;
+    position: relative;
+    padding: 4rem 8rem;
+    display: grid;
+    grid-template-areas: "title    title  title"
+                         "natural  rose   calidad";
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: $skin;
+    .skincare_title{
+        grid-area: title;
+        width: 100%;
+        text-align: center;
+        padding: 3rem 0;
+        p{
+            color: $black;
+        }
+    }
+    .skincare_natural{
+        grid-area: natural;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        .natural_container{
+            width: auto;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            .text_natural{
+                display: flex;
+                flex-direction: column;
+                margin: 1.5rem;
+                line-height: 2rem;
+                h5{
+                    color: $black;
+                }
+            }
+        }
+    }
+
+    .skincare_rose{
+        grid-area: rose;
+    }
+
+    .skincare_calidad{
+        grid-area: calidad;
+        text-align: right;
+        .calidad_container{
+            flex-direction: row-reverse;
+        }
+    }
+}
+
+.container_video{
+    position: relative;
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    video{
+        position: absolute;
+        top: -400px;
+        z-index: 1;
+    }
+    .opacity_video{
+        height: 50vh;
+        width: 100%;
+        position: absolute;
+        background: $skin;
+        opacity: .30;
+        z-index: 2;
+    }
+    .video_info{
+        height: 50vh;
+        width: 100%;
+        position: absolute;
+        z-index: 3;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.container_cream{
+    height: 70vh;
+    width: auto;
+    background-color: $coffe;
+    display: flex;
+    flex-direction: row;
+    .cream_image{
+        width: 50%;
+        height: auto;
+        background-image: url(/assets/BeautySkin.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    .cream_text{
+        width: 50%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 7rem;
+        text-align: center;
+        .boton{
+            @include boton_contact;
+        }
+    }
+}
+
+.container_reseña{
+    padding-top: 4rem;
+    .info_reseña{
+        align-items: center;
+        text-align: center;
+        background-image: url(/assets/reseña.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .img_nosotros{
+        max-width: 600px;
+        max-height: 800px;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.container_comments{
+    height: 70vh;
+    width: auto;
+    background-color: $coffe;
+    display: flex;
+    flex-direction: row;
+    .cream_image{
+        width: 50%;
+        height: auto;
+        background-image: url(/assets/comentario.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    .cream_text{
+        width: 50%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 7rem;
+        text-align: center;
+    }
+}
+
+
+.container_contacto{
+    height: auto;
+    width: auto;
+    position: relative;
+    padding: 4rem 8rem;
+    display: grid;
+    grid-template-areas: "titulo     titulo"
+                         "instagram  enlaces";
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: $skin;
+    .contact_title{
+        grid-area: titulo;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container_instagram{
+        width: 100%;
+        grid-area: instagram;
+    }
+    .container_enlaces{
+        width: 100%;
+        grid-area: enlaces;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        align-items: center;
+        padding: 0 8rem;
+    }
+    
+}
+
+footer{
+    height: auto;
+    background-color: $black;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 2rem 8rem;
+    justify-content: space-between;
+    align-items: center;
+    .marca{
+        h3{
+            font-size: 2rem;
+        }
+    }
+    .red{
+        display: flex;
+        img{
+            margin-right: 1rem;
+            cursor: pointer;
+        }
+    }
+    .copyright{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        color: $skin;
+        h5{
+            color: $skin;
+            font-size: 12px;
+        }
+        p{
+            font-size: 12px;
+        }
+    }
+}
+
+label {
+    display:block;
+    margin-top:20px;
+    font-family: Brandon;
+    text-transform: uppercase;
+}
+ 
+ 
+form {
+    margin:0 auto;
+    width:400px;
+}
+ 
+input, textarea {
+    width:380px;
+    height:40px;
+    background:$skin;
+    border:2px solid ;
+    padding:10px;
+    margin-top:5px;
+    font-size:15px;
+    color:$black;
+    font-family: Brandon;
+}
+ 
+textarea {
+    height:150px;
+}
+ 
+#submit {
+    width:200px;
+    height:40px;
+    border:none;
+    margin-top:20px;
+    cursor:pointer;
+    background-color: $black;
+    color: $coffe;
+}
+
+@media screen and (max-width:1300px){
+    .container_nosotros{
+        padding-top: 2rem;
+        padding-right: 8rem;
+        padding-left: 8rem;
+        flex-wrap: wrap;
+        text-align: center;
+        .info_nosotros{
+            align-items: center;
+            width: auto;
+            padding: 0;
+        }
+        .img_nosotros{
+            width: 100%;
+            align-items: center;
+            margin-top: 2rem;
+        }
+    }
+    .container_skincare{
+        grid-template-areas: "title   title"
+                             "rose natural"
+                             "rose calidad";
+        grid-template-rows: auto auto auto;
+        padding: 2rem 2rem;
+        grid-template-columns: 1fr 1fr;
+        .skincare_calidad{
+            text-align: left;
+            .calidad_container{
+                flex-direction: row;
+            }
+        }
+    }
+    .container_video{
+        height: 40vh;
+        video{
+            left: -300px;
+        }
+    }
+    .container_cream{
+        .cream_text{
+            padding: 3rem;
+        }
+    }
+    .container_reseña{
+        padding: 4rem 8rem;
+        justify-content: center;
+        .info_reseña{
+            background-image: none;
+        }
+    }
+    .container_enlaces{
+        padding: 0 1rem;
+    }
+}
+
+@media screen and (max-width:768px){
+    .slider{
+        background-position: bottom right;
+        h3{
+            font-size: 2.5rem;
+        }
+        h1{
+            font-size: 6rem;
+        }
+        p{
+            font-size: 1.3rem;
+        }
+    }
+    .container_info{
+        flex-wrap: wrap;
+        .skin{
+            margin: 2rem;
+        }
+    }
+    .container_nosotros{
+        padding-top: 2rem;
+        padding-right: 2rem;
+        padding-left: 2rem;
+        .img_nosotros{
+            img{
+                min-width: 200px;
+                min-height: 400px;
+            }
+        }
+    }
+    .container_skincare{
+        grid-template-areas: "title"
+                             "natural"
+                             "calidad"
+                             "rose";
+        grid-template-rows: auto 1fr 1fr 1fr;
+        padding: 2rem 2rem;
+        grid-template-columns: 1fr;
+        .skincare_natural{
+            padding: 1rem 1rem;
+        }
+        .skincare_rose{
+            display: flex;
+            justify-content: center;
+            img{
+                max-width: 329px;
+                max-height: 571px;
+            }
+        }
+        .skincare_calidad{
+            text-align: left;
+            .calidad_container{
+                flex-direction: row;
+            }
+        }
+    }
+    .container_video{
+        height: 50vh;
+        .video_info{
+            text-align: center;
+            padding: 2rem;
+        }
+        video{
+            left: -500px;
+        }
+    }
+    .container_cream{
+        height: 100vh;
+        flex-direction: column-reverse;
+        .cream_image{
+            height: 100%;
+            width: 100%;
+        }
+        .cream_text{
+            width: 100%;
+        }
+    }
+
+    .container_comments{
+        height: 100vh;
+        flex-direction: column-reverse;
+        .cream_image{
+            width: 100%;
+            height: 100%;
+        }
+        .cream_text{
+            width: 100%;
+            padding: 4rem;
+        }
+    }
+
+    .container_reseña{
+        padding: 2rem;
+    }
+
+    .container_contacto{
+        padding: 2rem;
+        grid-template-areas: "titulo"
+                             "enlaces"
+                             "instagram";
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;
+        .container_instagram{
+            width: 100%;
+            grid-area: instagram;
+        }
+        .container_enlaces{
+            padding: 4rem 2rem;
+            grid-gap: 40px;
+        }
+        
+    }
+
+    footer{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .foo{
+            margin-bottom: 1rem;
+        }
+    }
+
+    h2{
+        font-size: 2.5rem;
+    }
+
+}

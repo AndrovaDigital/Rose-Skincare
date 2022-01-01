@@ -1,0 +1,74 @@
+// Font Branding
+@font-face {font-family: "Casanova";src: url(/fonts/Casanova/Casanova.ttf) format("truetype"); font-weight: bold; font-style: normal;}
+@font-face {font-family: "Brandon_light";src: url(/fonts/Brandon/Brandon_light.otf) format("opentype"); font-weight: lighter; font-style: normal;}
+@font-face {font-family: "Brandon";src: url(/fonts/Brandon/Brandon_reg.otf) format("opentype"); font-weight: normal; font-style: normal;}
+@font-face {font-family: "Brandon_bold";src: url(/fonts/Brandon/Brandon_bold.otf) format("opentype"); font-weight: bold; font-style: normal;}
+@font-face {font-family: "Brandon_italic";src: url(/fonts/Brandon/Brandon_light_it.otf) format("opentype"); font-weight: 100; font-style: italic;}
+//
+
+// Palette Colors Branding
+$skin: #FFD9BE;
+$coffe: #E4C3A4;
+$white: #FBF1EC;
+$black: #353739;
+//
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+  background-color: $white;
+}
+
+body::-webkit-scrollbar{
+    width: 10px;
+}
+
+body::-webkit-scrollbar-thumb{
+    background: $black;
+    border-radius: 8px;
+    border-right: 2px solid $white;
+}
+
+h1{
+    font-family: Casanova;
+    font-size: 8rem;
+    color: $skin;
+    text-transform: uppercase;
+}
+
+h2{
+    font-family: Casanova;
+    font-size: 3.7rem;
+    color: $black;
+}
+
+h3{
+    font-family: Casanova;
+    text-transform: uppercase;
+    color: $coffe;
+    font-size: 3rem;
+}
+
+h4{
+    font-size: .6rem;
+    font-family: Brandon;
+    color: $black;
+}
+
+h5{
+    font-size: 1rem;
+    font-family: Brandon_bold;
+    text-transform: uppercase;
+    color: $black;
+}
+
+p{
+    font-family: Brandon_light;
+    line-height: 30px;
+    font-size: 1.2rem;
+}
+
